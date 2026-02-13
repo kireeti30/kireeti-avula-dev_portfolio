@@ -5,8 +5,8 @@ import profileImg from "@/assets/profile.jpg";
 
 const stats = [
   { value: "1+", label: "Years Exp." },
-  { value: "5+", label: "Projects" },
-  { value: "8.2", label: "CGPA" },
+  { value: "4+", label: "Projects" },
+  { value: "8.02", label: "CGPA" },
 ];
 
 const floatingIcons = [
@@ -92,7 +92,7 @@ export default function HeroSection() {
           >
             Data Analyst{" "}
             <span className="text-secondary">•</span> Data Science Enthusiast{" "}
-            <span className="text-secondary">•</span> Web Developer
+           
           </motion.p>
 
           <motion.p

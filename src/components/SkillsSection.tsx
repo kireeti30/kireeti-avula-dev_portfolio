@@ -1,76 +1,53 @@
 import { motion } from "framer-motion";
-import { Code2, BarChart3, Globe, Cloud } from "lucide-react";
+import {
+  SiPython,
+  SiMysql,
+  SiApachespark,
+  SiDatabricks,
+  SiNumpy,
+  SiPandas,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiAmazonwebservices,
+  SiGit,
+  SiGithub,
+  SiTableau,
+  SiSnowflake,
+} from "react-icons/si";
+import { BarChart3, Database, PieChart, FileSpreadsheet, LayoutDashboard } from "lucide-react";
+import type { IconType } from "react-icons";
 import type { LucideIcon } from "lucide-react";
 
-interface SkillCategory {
-  title: string;
-  icon: LucideIcon;
-  skills: { name: string; level: number }[];
+type SkillIcon = IconType | LucideIcon;
+
+interface Skill {
+  name: string;
+  icon: SkillIcon;
+  color: string; // tailwind text color token
 }
 
-const skillCategories: SkillCategory[] = [
-  {
-    title: "Programming & Data",
-    icon: Code2,
-    skills: [
-      { name: "Python", level: 85 },
-      { name: "SQL", level: 90 },
-      { name: "PySpark", level: 70 },
-      { name: "Databricks", level: 65 },
-      { name: "NumPy", level: 80 },
-      { name: "Pandas", level: 85 },
-    ],
-  },
-  {
-    title: "Visualization & Analytics",
-    icon: BarChart3,
-    skills: [
-      { name: "Power BI", level: 88 },
-      { name: "Excel", level: 92 },
-      { name: "Dashboard Creation", level: 85 },
-      { name: "Data Analysis", level: 88 },
-      { name: "ETL", level: 75 },
-    ],
-  },
-  {
-    title: "Web Development",
-    icon: Globe,
-    skills: [
-      { name: "JavaScript", level: 75 },
-      { name: "HTML", level: 90 },
-      { name: "CSS", level: 85 },
-    ],
-  },
-  {
-    title: "Cloud & Tools",
-    icon: Cloud,
-    skills: [
-      { name: "AWS Cloud", level: 60 },
-      { name: "Git", level: 80 },
-      { name: "GitHub", level: 85 },
-    ],
-  },
+const skills: Skill[] = [
+  { name: "Python", icon: SiPython, color: "text-[#3776AB]" },
+  { name: "SQL", icon: SiMysql, color: "text-[#4479A1]" },
+  { name: "PySpark", icon: SiApachespark, color: "text-[#E25A1C]" },
+  { name: "Databricks", icon: SiDatabricks, color: "text-[#FF3621]" },
+  { name: "Snowflake", icon: SiSnowflake, color: "text-[#00A1D9]" },
+  { name: "NumPy", icon: SiNumpy, color: "text-[#013243]" },
+  { name: "Pandas", icon: SiPandas, color: "text-[#150458]" },
+  { name: "Power BI", icon: LayoutDashboard, color: "text-[#F2C811]" },
+  { name: "Tableau", icon: SiTableau, color: "text-[#0079c1]" },
+  { name: "Excel", icon: FileSpreadsheet, color: "text-[#217346]" },
+  { name: "Dashboard Design", icon: PieChart, color: "text-secondary" },
+  { name: "Data Analysis", icon: BarChart3, color: "text-accent" },
+  { name: "ETL", icon: Database, color: "text-secondary" },
+  { name: "JavaScript", icon: SiJavascript, color: "text-[#F7DF1E]" },
+  { name: "HTML", icon: SiHtml5, color: "text-[#E34F26]" },
+  { name: "CSS", icon: SiCss3, color: "text-[#1572B6]" },
+  { name: "AWS", icon: SiAmazonwebservices, color: "text-[#FF9900]" },
+  { name: "Git", icon: SiGit, color: "text-[#F05032]" },
+  { name: "GitHub", icon: SiGithub, color: "text-foreground" },
 ];
-
-function SkillBar({ name, level, delay }: { name: string; level: number; delay: number }) {
-  return (
-    <div className="space-y-1.5">
-      <div className="flex justify-between items-center">
-        <span className="text-sm text-foreground font-medium">{name}</span>
-        <span className="text-xs text-muted-foreground">{level}%</span>
-      </div>
-      <div className="h-2 rounded-full bg-muted overflow-hidden">
-        <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-accent to-secondary"
-          initial={{ width: 0 }}
-          whileInView={{ width: `${level}%` }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay, ease: "easeOut" }}
-        />
-      </div>
-    </div>
-  );
-}
 
 export default function SkillsSection() {
   return (
@@ -82,7 +59,7 @@ export default function SkillsSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-semibold uppercase tracking-widest mb-4">
             Expertise
@@ -98,34 +75,26 @@ export default function SkillsSection() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {skillCategories.map((cat, catIdx) => (
-            <motion.div
-              key={cat.title}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: catIdx * 0.1 }}
-              className="p-6 rounded-2xl bg-card border border-border/50 hover:border-accent/30 hover:shadow-lg transition-all group"
-            >
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/15 to-secondary/15 flex items-center justify-center group-hover:from-accent/25 group-hover:to-secondary/25 transition-all">
-                  <cat.icon className="w-5 h-5 text-accent" />
-                </div>
-                <h3 className="font-display font-bold text-foreground">{cat.title}</h3>
-              </div>
-              <div className="space-y-3">
-                {cat.skills.map((s, sIdx) => (
-                  <SkillBar
-                    key={s.name}
-                    name={s.name}
-                    level={s.level}
-                    delay={catIdx * 0.1 + sIdx * 0.05}
-                  />
-                ))}
-              </div>
-            </motion.div>
-          ))}
+        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+          {skills.map((skill, i) => {
+            const Icon = skill.icon;
+            return (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.03, type: "spring", stiffness: 200 }}
+                whileHover={{ y: -6, scale: 1.05 }}
+                className="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-card border border-border/50 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 cursor-default"
+              >
+                <Icon className={`w-5 h-5 ${skill.color} shrink-0`} />
+                <span className="text-sm font-semibold text-foreground whitespace-nowrap">
+                  {skill.name}
+                </span>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

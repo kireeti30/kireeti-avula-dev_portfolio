@@ -4,7 +4,7 @@ import profileImg from "@/assets/profile.jpg";
 
 const highlights = [
   { icon: Briefcase, label: "1 Year Experience", sub: "Programmer Analyst at Ramco Systems" },
-  { icon: GraduationCap, label: "B.Tech CSE (Data Science)", sub: "VIT Vellore • 8.2 CGPA" },
+  { icon: GraduationCap, label: "B.Tech CSE (Data Science)", sub: "VIT Vellore • 8.02 CGPA" },
   { icon: MapPin, label: "Tirupati, India", sub: "Open to remote & relocation" },
 ];
 

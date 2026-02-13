@@ -92,10 +92,36 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Prevent horizontal scroll on all devices */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  /* Safari height fix */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  /* Responsive images */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 }
 
@@ -117,8 +143,4 @@
   .glass-card:hover {
     box-shadow: var(--shadow-card-hover);
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }

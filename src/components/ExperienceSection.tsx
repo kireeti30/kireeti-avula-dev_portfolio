@@ -24,7 +24,7 @@ const education = [
     org: "VIT Vellore",
     period: "2020 – 2024",
     location: "Vellore, India",
-    points: ["Specialization in Data Science", "CGPA: 8.2", "Focus on analytics, ML & data engineering"],
+    points: ["Specialization in Data Science", "CGPA: 8.02", "Focus on analytics, ML & data engineering"],
   },
 ];
 
@@ -159,7 +159,7 @@ export default function ExperienceSection() {
               className="mt-6 p-5 rounded-xl bg-gradient-to-br from-accent/10 to-secondary/10 border border-accent/20 text-center"
             >
               <p className="font-display text-4xl font-bold bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
-                8.2
+                8.02
               </p>
               <p className="text-xs text-hero-muted/60 uppercase tracking-widest mt-1">CGPA</p>
             </motion.div>

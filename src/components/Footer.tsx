@@ -18,7 +18,7 @@ export default function Footer() {
               Kireeti<span className="text-secondary">.</span>
             </p>
             <p className="text-xs text-primary-foreground/40 mt-1">
-              Data Analyst & Web Developer
+              Data Analyst & Engineer
             </p>
           </div>
 

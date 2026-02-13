@@ -3,10 +3,10 @@ import {
   BarChart3,
   LayoutDashboard,
   Database,
-  Globe,
   Cloud,
-  ArrowRight,
+  Send,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const services = [
   {
@@ -14,35 +14,24 @@ const services = [
     title: "Data Analysis & Insights",
     desc: "In-depth data exploration and statistical analysis to uncover actionable business insights.",
     color: "from-accent to-accent/70",
-    link: "#contact",
   },
   {
     icon: LayoutDashboard,
     title: "Dashboard Design",
     desc: "Interactive Power BI and Excel dashboards with compelling visualizations and KPI tracking.",
     color: "from-secondary to-secondary/70",
-    link: "#projects",
   },
   {
     icon: Database,
     title: "Data Cleaning & ETL",
     desc: "Data transformation, cleaning, and pipeline solutions for reliable, scalable analytics.",
     color: "from-accent to-secondary",
-    link: "#projects",
-  },
-  {
-    icon: Globe,
-    title: "Web Development",
-    desc: "Modern, responsive websites and frontend development with clean, performant code.",
-    color: "from-secondary to-accent",
-    link: "#projects",
   },
   {
     icon: Cloud,
     title: "Cloud & Pipelines",
     desc: "AWS cloud solutions and data pipeline architecture for scalable data processing.",
     color: "from-accent/80 to-accent",
-    link: "#contact",
   },
 ];
 
@@ -106,17 +95,23 @@ export default function ServicesSection() {
                 {s.desc}
               </p>
 
-              {/* learn more clickable */}
-              <a
-                href={s.link}
-                className="flex items-center gap-1 text-xs font-semibold text-accent group-hover:text-secondary transition-colors"
-              >
-                Learn more
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </a>
             </motion.div>
           ))}
         </div>
+
+        {/* Contact Me CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-14"
+        >
+          <Button asChild size="lg" className="bg-gradient-to-r from-secondary to-accent text-primary-foreground px-10 gap-2 shadow-lg">
+            <a href="#contact">
+              <Send className="w-4 h-4" /> Contact Me
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
