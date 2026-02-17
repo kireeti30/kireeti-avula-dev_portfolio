@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, Github, MapPin, Mail, Phone, Users, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import PageTransition from "@/components/PageTransition";
 import agricultureHero from "@/assets/agriculture-hero.jpg";
 
 const navLinks = [
@@ -83,7 +84,7 @@ const AgricultureProject = () => {
         }
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -94,13 +95,14 @@ const AgricultureProject = () => {
   };
 
   return (
+    <PageTransition>
     <div className="min-h-screen bg-[#1a5632] text-foreground">
       {/* Navbar */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#1a5632]/95 backdrop-blur-md shadow-lg">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors">
+          <a href="/#projects" className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors">
             <ArrowLeft size={16} />
-          </Link>
+          </a>
           <h1 className="text-xl font-bold text-white tracking-wide">sasyam</h1>
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
@@ -418,6 +420,7 @@ const AgricultureProject = () => {
         </div>
       </footer>
     </div>
+    </PageTransition>
   );
 };
 

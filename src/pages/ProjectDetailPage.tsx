@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, Github, ExternalLink, Download, FileText, Database, BarChart3, Brain } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import PageTransition from "@/components/PageTransition";
 import Footer from "@/components/Footer";
 
 
@@ -132,6 +133,7 @@ export default function ProjectDetailPage() {
   const Icon = project.icon;
 
   return (
+    <PageTransition>
     <div className="min-h-screen bg-background">
       <Navbar />
 
@@ -141,10 +143,10 @@ export default function ProjectDetailPage() {
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, hsl(var(--secondary)/0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
         <div className="container mx-auto relative z-10 px-4">
-          <Link to="/#projects" className="inline-flex items-center gap-2 text-hero-foreground/70 hover:text-secondary transition-colors mb-8 group">
+          <a href="/#projects" className="inline-flex items-center gap-2 text-hero-foreground/70 hover:text-secondary transition-colors mb-8 group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             <span className="text-sm font-medium">Back to Projects</span>
-          </Link>
+          </a>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex items-start gap-5 mb-6">
             <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${project.accent} flex items-center justify-center shadow-lg flex-shrink-0`}>
@@ -261,5 +263,6 @@ export default function ProjectDetailPage() {
 
       <Footer />
     </div>
+    </PageTransition>
   );
 }
