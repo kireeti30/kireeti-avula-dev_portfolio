@@ -3,22 +3,23 @@ import { Folder, ArrowUpRight, Github, ExternalLink, FileText } from "lucide-rea
 import { Link } from "react-router-dom";
 
 
-import ikeaOverview from "@/assets/dashboards/ikea-overview.png";
-import agricultureHero from "@/assets/agriculture-hero.jpg";
-import logisticsCover from "@/assets/projects/logistics-cover.png";
+import agricultureCover from "@/assets/projects/agriculture-cover-themed.jpg";
+import retailCover from "@/assets/projects/retail-cover-themed.jpg";
+import logisticsCover from "@/assets/projects/logistics-cover-themed.jpg";
+import ragCover from "@/assets/projects/rag-cover-themed.jpg";
 
 
 
 const projects = [
   {
     title: "India Agriculture Crop Production Analysis",
-    date: "Feb 2026",
+    date: "Jun 2023",
     desc: "Analyzed India's agricultural crop production (1997–2021) using Tableau dashboards with interactive filters, state-wise comparisons, and crop trend visualizations.",
     tags: ["Tableau", "Data Visualization", "Analytics"],
     accent: "from-blue-500 to-cyan-500",
     github: "https://github.com/kireeti30/India-Agriculture-crop-production-analysis.git",
     slug: "agriculture",
-    image: agricultureHero,
+    image: agricultureCover,
     hasPage: true,
   },
 
@@ -30,7 +31,8 @@ const projects = [
     accent: "from-secondary to-secondary/60",
     github: "https://github.com/kireeti30/IKEA-Customer-Retention-PowerBI.git",
     slug: "retail-customer-retention",
-    image: ikeaOverview,
+    image: retailCover,
+    hasPage: true,
   },
 
   {
@@ -42,10 +44,8 @@ const projects = [
     github: "https://github.com/kireeti30/logistics-operations-sql-analysis.git",
     slug: "logistics-optimization",
     image: logisticsCover,
+    hasPage: true,
   },
-  
-  
-  
   {
     title: "RAG-based GenAI Knowledge Assistant",
     date: "Research Paper",
@@ -54,6 +54,7 @@ const projects = [
     accent: "from-accent/80 to-accent",
     github: "https://github.com/kireeti30",
     slug: "rag-genai-assistant",
+    image: ragCover,
     badge: "Research Paper",
   },
 ];
