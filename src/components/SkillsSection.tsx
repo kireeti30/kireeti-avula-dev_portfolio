@@ -13,9 +13,10 @@ import {
   SiGit,
   SiGithub,
   SiTableau,
-  SiSnowflake,
+  SiAngular,
+  SiDotnet,
 } from "react-icons/si";
-import { BarChart3, Database, PieChart, FileSpreadsheet, LayoutDashboard } from "lucide-react";
+import { BarChart3, Database, PieChart, FileSpreadsheet, LayoutDashboard, Code2, Cloud } from "lucide-react";
 import type { IconType } from "react-icons";
 import type { LucideIcon } from "lucide-react";
 
@@ -24,15 +25,18 @@ type SkillIcon = IconType | LucideIcon;
 interface Skill {
   name: string;
   icon: SkillIcon;
-  color: string; // tailwind text color token
+  color: string;
 }
 
 const skills: Skill[] = [
   { name: "Python", icon: SiPython, color: "text-[#3776AB]" },
   { name: "SQL", icon: SiMysql, color: "text-[#4479A1]" },
+  { name: "C#", icon: Code2, color: "text-[#239120]" },
+  { name: ".NET", icon: SiDotnet, color: "text-[#512BD4]" },
+  { name: "Angular", icon: SiAngular, color: "text-[#DD0031]" },
   { name: "PySpark", icon: SiApachespark, color: "text-[#E25A1C]" },
   { name: "Databricks", icon: SiDatabricks, color: "text-[#FF3621]" },
-  { name: "Snowflake", icon: SiSnowflake, color: "text-[#00A1D9]" },
+  { name: "Azure", icon: Cloud, color: "text-[#0078D4]" },
   { name: "NumPy", icon: SiNumpy, color: "text-[#013243]" },
   { name: "Pandas", icon: SiPandas, color: "text-[#150458]" },
   { name: "Power BI", icon: LayoutDashboard, color: "text-[#F2C811]" },
