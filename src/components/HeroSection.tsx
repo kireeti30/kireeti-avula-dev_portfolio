@@ -90,9 +90,8 @@ export default function HeroSection() {
             transition={{ delay: 0.4 }}
             className="text-lg md:text-xl text-hero-muted mb-3 font-display font-medium"
           >
-            Data Analyst{" "}
-            <span className="text-secondary">•</span> Data Science Enthusiast{" "}
-           
+            Full Stack Developer{" "}
+            <span className="text-secondary">•</span> Data Analyst{" "}
           </motion.p>
 
           <motion.p
@@ -101,8 +100,8 @@ export default function HeroSection() {
             transition={{ delay: 0.5 }}
             className="text-hero-muted/70 mb-8 max-w-lg leading-relaxed"
           >
-            Transforming data into actionable insights and intelligent solutions.
-            Building enterprise-grade analytics and finance solutions that drive
+            Building full-stack web applications with Angular & .NET, and transforming
+            data into actionable insights. Delivering enterprise-grade solutions that drive
             real business impact.
           </motion.p>
 
@@ -208,7 +207,7 @@ export default function HeroSection() {
             >
               <p className="text-xs font-bold text-foreground flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-secondary" />
-                Data Analytics
+                Full Stack Dev
               </p>
             </motion.div>
 

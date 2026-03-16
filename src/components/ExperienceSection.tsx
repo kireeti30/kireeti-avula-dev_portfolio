@@ -8,12 +8,13 @@ const experience = [
     period: "Sep 2024 – Oct 2025",
     location: "Chennai, India",
     points: [
-      "Designed interactive UI screens and implemented backend business logic using SQL",
-      "Developed RESTful APIs for enterprise HRP platform finance workflows",
+      "Developed frontend screens using Angular for enterprise HRP platform",
+      "Built backend services and RESTful APIs using .NET framework",
+      "Designed and optimized database queries and procedures with SQL Server",
+      "Automated workflows and data processing tasks using Python",
+      "Created interactive Power BI dashboards for finance and payroll analytics",
       "Enhanced tax slab configurations and payroll calculation logic",
-      "Integrated custom APIs and automated job alerts",
       "Worked in Agile teams on enterprise finance and payroll systems",
-      "Delivered critical enhancements within tight sprint deadlines",
     ],
   },
 ];

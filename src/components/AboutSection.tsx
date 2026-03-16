@@ -9,7 +9,7 @@ const highlights = [
 ];
 
 const checkpoints = [
-  "Enterprise-grade analytics & finance solutions",
+  "Full-stack web apps with Angular & .NET",
   "Interactive dashboards with Power BI & Excel",
   "RESTful API development & system integration",
   "Data-driven decision making & business insights",
@@ -75,8 +75,8 @@ export default function AboutSection() {
                     <BarChartIcon />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-foreground">Data Analyst</p>
-                    <p className="text-xs text-muted-foreground">VIT Vellore Alumni</p>
+                    <p className="text-sm font-bold text-foreground">Full Stack Dev</p>
+                    <p className="text-xs text-muted-foreground">& Data Analyst</p>
                   </div>
                 </div>
               </motion.div>
@@ -91,13 +91,13 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-muted-foreground leading-relaxed mb-5 text-lg">
-              I'm a dedicated Data Analyst with 1 year of professional experience and a strong
+              I'm a Full Stack Developer & Data Analyst with 1 year of professional experience and a strong
               foundation in Computer Science and Data Science from VIT Vellore.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              My passion lies in leveraging data to solve real-world problems and drive business
-              insights. From building interactive Power BI dashboards to developing RESTful APIs
-              for enterprise platforms, I bring a blend of analytical thinking and technical execution.
+              I build full-stack web applications using Angular and .NET, and provide .NET and Angular based
+              web application development services. I also create interactive Power BI dashboards and
+              leverage data to drive business insights with analytical thinking and technical execution.
             </p>
 
             {/* Checkpoints */}

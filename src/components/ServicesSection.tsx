@@ -23,14 +23,14 @@ const services = [
   },
   {
     icon: Database,
-    title: "Data Cleaning & ETL",
-    desc: "Data transformation, cleaning, and pipeline solutions for reliable, scalable analytics.",
+    title: ".NET & Angular Web Apps",
+    desc: "Full-stack web application development using Angular for frontend and .NET for backend services.",
     color: "from-accent to-secondary",
   },
   {
     icon: Cloud,
     title: "Cloud & Pipelines",
-    desc: "AWS cloud solutions and data pipeline architecture for scalable data processing.",
+    desc: "Azure cloud solutions and data pipeline architecture for scalable data processing.",
     color: "from-accent/80 to-accent",
   },
 ];
