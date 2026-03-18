@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import agricultureCover from "@/assets/projects/agriculture-cover-themed.jpg";
 import retailCover from "@/assets/projects/retail-cover-themed.jpg";
 import logisticsCover from "@/assets/projects/logistics-cover-themed.jpg";
-import ragCover from "@/assets/projects/rag-cover-themed.jpg";
+
 import sripadaCover from "@/assets/projects/sripada-residency-cover.jpg";
 import garudaCover from "@/assets/projects/garuda-tours-cover.jpg";
 
@@ -26,6 +26,17 @@ interface Project {
 }
 
 const analyticsProjects: Project[] = [
+  {
+    title: "Arogya Suraksha – Health Policy AI Assistant",
+    date: "Live Project",
+    desc: "RAG-based AI assistant that answers health insurance policy queries using LangChain, OpenAI, and Streamlit with intelligent document retrieval.",
+    tags: ["Python", "LangChain", "GenAI", "Streamlit"],
+    accent: "from-emerald-500 to-teal-500",
+    github: "https://github.com/kireeti30",
+    slug: "arogya-suraksha",
+    liveUrl: "https://arogya-suraksha-ai-8pvyc5y3h3btvcbzuun7tu.streamlit.app/",
+    badge: "Live",
+  },
   {
     title: "India Agriculture Crop Production Analysis",
     date: "Jun 2023",
@@ -58,17 +69,6 @@ const analyticsProjects: Project[] = [
     slug: "logistics-optimization",
     image: logisticsCover,
     hasPage: true,
-  },
-  {
-    title: "RAG-based GenAI Knowledge Assistant",
-    date: "Research Paper",
-    desc: "Built end-to-end RAG system using Python, OpenAI APIs, LangChain, and Pinecone with document ingestion pipelines and real-time LLM responses.",
-    tags: ["Python", "LangChain", "GenAI", "Pinecone"],
-    accent: "from-accent/80 to-accent",
-    github: "https://github.com/kireeti30",
-    slug: "rag-genai-assistant",
-    image: ragCover,
-    badge: "Research Paper",
   },
 ];
 
@@ -215,7 +215,18 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
         <div className={`h-1.5 w-full bg-gradient-to-r ${p.accent}`} />
       )}
 
-      {p.badge && (
+      {p.badge === "Live" && (
+        <div className="absolute top-3 right-3 z-10">
+          <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-green-500/10 border border-green-500/20">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+            </span>
+            <span className="text-xs font-semibold text-green-500">Live</span>
+          </span>
+        </div>
+      )}
+      {p.badge && p.badge !== "Live" && (
         <div className="absolute top-3 right-3 z-10">
           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-accent/90 text-accent-foreground text-xs font-semibold">
             <FileText className="w-3 h-3" />
@@ -259,14 +270,27 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
             <Github className="w-4 h-4" />
             GitHub
           </a>
-          <Link
-            to={`/projects/${p.slug}`}
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-secondary transition-colors ml-auto"
-          >
-            <ExternalLink className="w-4 h-4" />
-            View Project
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
+          {p.liveUrl ? (
+            <a
+              href={p.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-secondary to-accent text-primary-foreground text-xs font-semibold hover:shadow-lg transition-all duration-300 ml-auto"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Visit Live App
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+          ) : (
+            <Link
+              to={`/projects/${p.slug}`}
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-secondary transition-colors ml-auto"
+            >
+              <ExternalLink className="w-4 h-4" />
+              View Project
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </Link>
+          )}
         </div>
       </div>
     </motion.div>
