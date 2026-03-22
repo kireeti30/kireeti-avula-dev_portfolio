@@ -5,7 +5,7 @@ import profileImg from "@/assets/profile.jpg";
 
 const stats = [
   { value: "1+", label: "Years Exp." },
-  { value: "4+", label: "Projects" },
+  { value: "8+", label: "Projects" },
   { value: "8.02", label: "CGPA" },
 ];
 
