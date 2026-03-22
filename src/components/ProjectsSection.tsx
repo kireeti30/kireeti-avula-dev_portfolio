@@ -27,15 +27,24 @@ interface Project {
 
 const analyticsProjects: Project[] = [
   {
+    title: "US Healthcare Payment Integrity – CMS Medicare Analysis",
+    date: "Mar 2026",
+    desc: "Analyzed CMS Medicare inpatient data to identify billing gaps, charge ratio outliers, and payment patterns across US hospitals using Python Pandas and Power BI.",
+    tags: ["Power BI", "Python", "Pandas", "CMS", "Healthcare"],
+    accent: "from-violet-500 to-purple-500",
+    github: "https://github.com/kireeti30",
+    slug: "exl-payment-integrity",
+    hasPage: true,
+  },
+  {
     title: "Arogya Suraksha – Health Policy AI Assistant",
-    date: "Live Project",
+    date: "Feb 2026",
     desc: "RAG-based AI assistant that answers health insurance policy queries using LangChain, OpenAI, and Streamlit with intelligent document retrieval.",
     tags: ["Python", "LangChain", "GenAI", "Streamlit"],
     accent: "from-emerald-500 to-teal-500",
     github: "https://github.com/kireeti30",
     slug: "arogya-suraksha",
     liveUrl: "https://arogya-suraksha-ai-8pvyc5y3h3btvcbzuun7tu.streamlit.app/",
-    badge: "Live",
   },
   {
     title: "India Agriculture Crop Production Analysis",

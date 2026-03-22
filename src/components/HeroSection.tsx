@@ -207,7 +207,7 @@ export default function HeroSection() {
             >
               <p className="text-xs font-bold text-foreground flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-secondary" />
-                Full Stack Dev
+                Data Analyst
               </p>
             </motion.div>
 
