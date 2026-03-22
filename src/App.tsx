@@ -12,6 +12,7 @@ import ProjectDetailPage from "./pages/ProjectDetailPage";
 
 const AgricultureProject = lazy(() => import("./pages/AgricultureProject"));
 const PowerBIProject = lazy(() => import("./pages/PowerBIProject"));
+const EXLPaymentIntegrity = lazy(() => import("./pages/EXLPaymentIntegrity"));
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const AnimatedRoutes = () => {
         <Route path="/" element={<Index />} />
         <Route path="/projects/agriculture" element={<AgricultureProject />} />
         <Route path="/projects/retail-customer-retention" element={<PowerBIProject />} />
+        <Route path="/projects/exl-payment-integrity" element={<EXLPaymentIntegrity />} />
         <Route path="/projects/:slug" element={<ProjectDetailPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
