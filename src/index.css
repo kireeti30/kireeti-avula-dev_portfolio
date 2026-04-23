@@ -117,6 +117,27 @@
     min-height: 100dvh;
   }
 
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.2);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.4);
+  }
+
+  /* Selection color */
+  ::selection {
+    background: hsl(var(--secondary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+
   /* Responsive images */
   img {
     max-width: 100%;

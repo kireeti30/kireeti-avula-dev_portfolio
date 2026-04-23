@@ -1,24 +1,13 @@
 import { motion } from "framer-motion";
 import {
-  SiPython,
-  SiMysql,
-  SiApachespark,
-  SiDatabricks,
-  SiNumpy,
-  SiPandas,
-  SiJavascript,
-  SiHtml5,
-  SiCss3,
-  SiAmazonwebservices,
-  SiGit,
-  SiGithub,
-  SiTableau,
-  SiAngular,
-  SiDotnet,
+  SiPython, SiMysql, SiApachespark, SiDatabricks, SiNumpy, SiPandas,
+  SiJavascript, SiHtml5, SiCss3, SiAmazonwebservices, SiGit, SiGithub,
+  SiTableau, SiAngular, SiDotnet,
 } from "react-icons/si";
 import { BarChart3, Database, PieChart, FileSpreadsheet, LayoutDashboard, Code2, Cloud } from "lucide-react";
 import type { IconType } from "react-icons";
 import type { LucideIcon } from "lucide-react";
+import GlowCard from "@/components/GlowCard";
 
 type SkillIcon = IconType | LucideIcon;
 
@@ -56,7 +45,12 @@ const skills: Skill[] = [
 export default function SkillsSection() {
   return (
     <section id="skills" className="section-padding bg-background relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/3 rounded-full blur-[120px]" />
+      {/* Animated background */}
+      <motion.div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px]"
+        animate={{ scale: [1, 1.2, 1], opacity: [0.03, 0.06, 0.03] }}
+        transition={{ duration: 6, repeat: Infinity }}
+      />
 
       <div className="container mx-auto relative z-10">
         <motion.div
@@ -83,20 +77,24 @@ export default function SkillsSection() {
           {skills.map((skill, i) => {
             const Icon = skill.icon;
             return (
-              <motion.div
+              <GlowCard
                 key={skill.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.03, type: "spring", stiffness: 200 }}
-                whileHover={{ y: -6, scale: 1.05 }}
-                className="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-card border border-border/50 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 cursor-default"
+                className="rounded-xl border border-border/50 bg-card"
               >
-                <Icon className={`w-5 h-5 ${skill.color} shrink-0`} />
-                <span className="text-sm font-semibold text-foreground whitespace-nowrap">
-                  {skill.name}
-                </span>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.03, type: "spring", stiffness: 200 }}
+                  whileHover={{ y: -6, scale: 1.08 }}
+                  className="flex items-center gap-2.5 px-5 py-3 cursor-default"
+                >
+                  <Icon className={`w-5 h-5 ${skill.color} shrink-0`} />
+                  <span className="text-sm font-semibold text-foreground whitespace-nowrap">
+                    {skill.name}
+                  </span>
+                </motion.div>
+              </GlowCard>
             );
           })}
         </div>

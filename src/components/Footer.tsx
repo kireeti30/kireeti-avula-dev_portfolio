@@ -1,4 +1,5 @@
 import { Linkedin, Github, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/in/kireeti-avula-690480245/", label: "LinkedIn" },
@@ -18,22 +19,24 @@ export default function Footer() {
               Kireeti<span className="text-secondary">.</span>
             </p>
             <p className="text-xs text-primary-foreground/40 mt-1">
-              Data Analyst & Engineer
+              Full Stack Developer & Data Analyst
             </p>
           </div>
 
           <div className="flex items-center gap-3">
             {socialLinks.map((s) => (
-              <a
+              <motion.a
                 key={s.label}
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
+                whileHover={{ scale: 1.15, y: -3 }}
+                whileTap={{ scale: 0.95 }}
                 className="w-10 h-10 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10 flex items-center justify-center hover:bg-secondary/20 hover:border-secondary/30 transition-all group"
               >
                 <s.icon className="w-4 h-4 text-primary-foreground/60 group-hover:text-secondary transition-colors" />
-              </a>
+              </motion.a>
             ))}
           </div>
 
